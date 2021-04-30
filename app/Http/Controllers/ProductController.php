@@ -20,6 +20,13 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        
+        // dd($request->all());
+        Product::create($request->all());
+        return redirect('/products');
+    }
+
+    public function edit($id)
+    {
+        return view('products.edit');
     }
 }
